@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Productos</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Estos son tus productos!
+{% endblock h1_header %}
+
+{% block main %}
+
+<form action="">
+    {{formulario}}
+    <input type="submit" value="Buscar">
+</form>
+
+{% if listado_de_despensas %}
+<ul>
+    {% for despensa in listado_de_despensas %}
+    <li>{{despensa}}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No se encontraron despensas.</p>
+{% endif %}
+
+{% endblock main %}

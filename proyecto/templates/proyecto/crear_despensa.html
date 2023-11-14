@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Crear Despensa</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Creando una despensa
+{% endblock h1_header %}
+
+{% block main %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.media}}
+        {{form}}
+    </table>
+    <input type="submit" value="Crear">
+</form>
+
+{% endblock main %}
