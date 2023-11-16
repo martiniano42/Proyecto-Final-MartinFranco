@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Limpieza</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Productos
+{% endblock h1_header %}
+
+{% block main %}
+
+<p>
+    <a href={% url "crear_limpieza" %}>Crear Producto</a>
+</p>
+
+<form action="">
+    {{formulario}}
+    <input type="submit" value="Buscar">
+</form>
+
+{% if listado_de_limpieza %}
+<ul>
+    {% for limpieza in listado_de_limpieza %}
+    <li>{{limpieza}} | <a href={% url "actualizar_limpieza" limpieza.id %}>Actualizar</a> | <a href={% url "eliminar_limpieza" limpieza.id %}>Eliminar</a> | <a href={% url "detalle_limpieza" limpieza.id %}>Detalle</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No se encontraron productos.</p>
+{% endif %}
+
+{% endblock main %}

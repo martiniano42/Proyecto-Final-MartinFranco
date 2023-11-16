@@ -35,7 +35,7 @@
             <div class="container">
                 <a class="navbar-brand" href={% url "proyecto" %}>Inicio</a>
                 <a class="navbar-brand" href={% url "despensas" %}>Despensas</a>
-                <a class="navbar-brand" href={% url "crear_limpieza" %}>Limpieza</a>
+                <a class="navbar-brand" href={% url "limpiezas" %}>Limpieza</a>
                 {% if not request.user.is_authenticated %}
                 <a class="btn btn-primary" href={% url "login" %}>Iniciar Sesion</a>
                 <a class="btn btn-secondary" href={% url "registrarse" %}>Registrarse</a>

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Despensa {{despensa.id}}</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Depensa {{despensa.id}}
+{% endblock h1_header %}
+
+{% block main %}
+
+<ul>
+    <li>Nombre: {{despensa.nombre}}</li>
+    <li>Apellido: {{despensa.apellido}}</li>
+    <li>Biografía: {{despensa.biografia | safe }}</li>
+    <li>Fecha de creacion: {{despensa.fecha_creacion}}</li>
+</ul>
+
+{% endblock main %}

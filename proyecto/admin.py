@@ -1,6 +1,4 @@
 from django.contrib import admin
-from proyecto.models import Despensa, Bebidas, Limpieza
+from proyecto.models import Despensa
 
 admin.site.register(Despensa)
-admin.site.register(Bebidas)
-admin.site.register(Limpieza)

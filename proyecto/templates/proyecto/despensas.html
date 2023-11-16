@@ -1,25 +1,32 @@
 {% extends "base.html" %}
 
 {% block title_head %}
-<title>Productos</title>
+<title>Despensas</title>
 {% endblock title_head %}
 
 {% block h1_header %}
-Estos son tus productos!
+Lista de despensas
 {% endblock h1_header %}
 
 {% block main %}
+<p>
+    <a class="btn btn-success btn-sm" href={% url "crear_despensa" %}>Crear Despensa</a>
+</p>
 
-<form action="">
-    {{formulario}}
+<form action={% url "despensas" %}>
+    <input type="text" name="nombre" placeholder="Buscar por nombre">
     <input type="submit" value="Buscar">
 </form>
 
+
+
+
 {% if listado_de_despensas %}
 <ul>
+    <br>
     {% for despensa in listado_de_despensas %}
-    <li>{{despensa}}</li>
-    {% endfor %}
+    <li>{{despensa}} | <a class="btn btn-info btn-sm" href={% url "detalle_despensa" despensa.id %}>Ver más...</a> <a class="btn btn-info btn-sm" href={% url "modificar_despensa" despensa.id %}>Modificar</a><a class="btn btn-danger btn-sm" href={% url "eliminar_despensa" despensa.id %}>Eliminar</a></li>
+  {% endfor %}
 </ul>
 {% else %}
 <p>No se encontraron despensas.</p>

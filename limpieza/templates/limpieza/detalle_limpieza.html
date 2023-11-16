@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Limpieza {{limpieza.id}}</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Producto {{limpieza.id}}
+{% endblock h1_header %}
+
+{% block main %}
+
+<ul>
+    <li>Producto: {{limpieza.producto}}</li>
+    <li>Marca: {{limpieza.marca}}</li>
+    <li>Descripción: {{limpieza.descripcion | safe }}</li>
+    <li>Vencimiento: {{limpieza.vencimiento}}</li>
+    {% if request.limpieza.datosextra.avatar %}
+        <img src={{request.limpieza.datosextra.avatar.url}} alt="avatar" height='40px'>
+    {% endif %}    
+</ul>
+
+{% endblock main %}

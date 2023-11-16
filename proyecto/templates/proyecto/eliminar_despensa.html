@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Eliminar Despensa</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Eliminar Despensa
+{% endblock h1_header %}
+
+{% block main %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    ¿Desea eliminar el automovil {{despensa.nombre}} - {{despensa.franco}} - {{despensa.fecha_creacion}}?
+    <input type="submit" value="Confirmar">
+</form>
+
+{% endblock main %}
