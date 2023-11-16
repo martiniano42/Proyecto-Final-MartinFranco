@@ -5,7 +5,7 @@ urlpatterns = [
     path('', proyecto, name='proyecto'),
     path('limpiezas/', limpiezas, name='limpiezas'),
     path('crear/', crear_limpieza, name='crear_limpieza'),
-    path('limpieza/<int:paleta_id>/', detalle_limpieza, name='detalle_limpieza'),
-    path('limpieza/<int:paleta_id>/eliminar/', eliminar_limpieza, name='eliminar_limpieza'),
-    path('limpieza/<int:paleta_id>/actualizar/', actualizar_limpieza, name='actualizar_limpieza'),
+    path('limpieza/<int:limpieza_id>/', detalle_limpieza, name='detalle_limpieza'),
+    path('limpieza/<int:limpieza_id>/eliminar/', eliminar_limpieza, name='eliminar_limpieza'),
+    path('limpieza/<int:limpieza_id>/actualizar/', actualizar_limpieza, name='actualizar_limpieza'),
 ]

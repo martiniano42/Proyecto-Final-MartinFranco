@@ -15,8 +15,8 @@ Producto {{limpieza.id}}
     <li>Marca: {{limpieza.marca}}</li>
     <li>Descripción: {{limpieza.descripcion | safe }}</li>
     <li>Vencimiento: {{limpieza.vencimiento}}</li>
-    {% if request.limpieza.datosextra.avatar %}
-        <img src={{request.limpieza.datosextra.avatar.url}} alt="avatar" height='40px'>
+    {% if limpieza.avatar %}
+         <img src={{limpieza.avatar.url}} alt="avatar" height='100px'>   
     {% endif %}    
 </ul>
 
