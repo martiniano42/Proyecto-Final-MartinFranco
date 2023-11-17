@@ -12,15 +12,9 @@ def proyecto(request):
     
     return render(request, 'proyecto/proyecto.html', {})
 
-# def despensas(request):
-
-#     formulario = BusquedaDespensaFormulario(request.GET)
-#     if formulario.is_valid():
-#         nombre_a_buscar = formulario.cleaned_data.get('nombre')
-#         listado_de_despensas = Despensa.objects.filter(nombre__icontains=nombre_a_buscar)
+def aboutme(request):
     
-#     formulario = BusquedaDespensaFormulario()
-#     return render(request, 'proyecto/despensas.html', {'formulario': formulario, 'listado_de_despensas': listado_de_despensas})
+    return render(request, 'proyecto/aboutme.html', {})
 
 class ListadoDespensas(ListView):
     model = Despensa
