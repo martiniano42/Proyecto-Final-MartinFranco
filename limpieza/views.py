@@ -18,6 +18,9 @@ def limpiezas(request):
     return render(request, 'limpieza/limpiezas.html', {'formulario': formulario, 'listado_de_limpieza': listado_de_limpieza})
 
 
+
+
+
 @login_required
 def crear_limpieza(request):
     if request.method == 'POST':

@@ -6,4 +6,5 @@ class DatosExtra(models.Model):
    biografia = models.CharField(max_length=300)
    avatar = models.ImageField(upload_to='avatares', null=True, blank=True)
 
-
+   def __str__(self):
+      return f'{self.id} - {self.user} - {self.biografia} - {self.avatar}'

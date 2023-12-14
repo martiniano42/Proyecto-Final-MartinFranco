@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Perfil {{datosextra.id}}</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Aquí tiene sus datos: {{datosextra.user}}
+{% endblock h1_header %}
+
+{% block main %}
+
+<ul>
+    <li>User: {{datosextra.user}}</li>
+    <li>Biografia: {{datosextra.biografia}}</li>
+    <li>Avatar:</li>
+    {% if datosextra.avatar %}
+         <img src={{datosextra.avatar.url}} alt="avatar" height='100px'>   
+    {% endif %}    
+</ul>
+
+<a class="btn btn-info btn-sm" href={% url "editar_perfil" %}>Editar su Perfil</a>
+
+{% endblock main %}

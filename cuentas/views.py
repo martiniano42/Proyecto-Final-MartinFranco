@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login as django_login
 from django.contrib.auth.views import PasswordChangeView
+from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 
 from cuentas.forms import MiFormularioDeCreacion, EdicionPerfil
@@ -24,9 +25,17 @@ def login(request):
             
             DatosExtra.objects.get_or_create(user=request.user)
             
-            return redirect('proyecto')
+            return redirect('detalle_perfil')
               
     return render(request, 'cuentas/login.html', {'formulario_de_login': formulario})
+
+
+def detalle_perfil(request):
+    datosextra = request.user.datosextra
+    print(datosextra.user, datosextra.biografia)
+    return render(request, 'cuentas/detalle_perfil.html', {'datosextra': datosextra})    
+
+
 
 def registro(request):
     formulario = MiFormularioDeCreacion()

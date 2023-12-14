@@ -40,7 +40,7 @@
                 <a class="btn btn-primary" href={% url "login" %}>Iniciar Sesion</a>
                 <a class="btn btn-secondary" href={% url "registrarse" %}>Registrarse</a>
                 {% else %}
-                <a class="navbar-brand" href={% url "editar_perfil" %}>
+                <a class="navbar-brand" href={% url "detalle_perfil" %}>
                     {% if request.user.datosextra.avatar %}
                         <img src={{request.user.datosextra.avatar.url}} alt="avatar" height='40px'>
                     {% endif %}
